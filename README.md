@@ -28,12 +28,27 @@ Screenshots of the process follow:
 1. You'll now be asked to create an _index patten_ for whatever indices you have in your ElasticSearch setup. Use the __index name__ you created during setup and type it in to the text box. ![create index pattern](docs/imgs/kibana_setup_03.png "Creating your Index Patterns")
     -  The pattern supports wild cards and the like, so you can have one Kibana pattern for multiple indices (useful when you break down indices by day or month).
 1. One of Kibana's real powers comes in handling time series. To enable this, you need to tell Kibana what field has your time data. If you're using Twitter data, select __created_at__ from the dropdown box. ![time field](docs/imgs/kibana_setup_04.png "Setting your Time Field")
-1. One of Kibana's real powers comes in handling time series. To enable this, you need to tell Kibana what field has your time data. If you're using Twitter data, select __created_at__ from the dropdown box. ![time field](docs/imgs/kibana_setup_04.png "Setting your Time Field")
 
 ## Searching in Kibana
 
 Now that you've set up Kibana, you can search your data. Some helpful screenshots for this follow:
 
-- You mainly search via the _Discover_ section. When you first go here though, Kibana may say there's no data. This lack of data is a result of Kibana's default timeframe filter (`Last 15 Minutes`). You'll want to change that to cover whatever date range your date covers. ![search landing](docs/imgs/kibana_search_01.png "Initial search page")
-- You can select from several pre-configured options or use your own range. I often use __Last 5 Years__ ![timeframe](docs/imgs/kibana_search_02.png "Select timeframe")
-- Your data should appear now! ![data](docs/imgs/kibana_search_03.png "Data!")
+1. You mainly search via the _Discover_ section. When you first go here though, Kibana may say there's no data. This lack of data is a result of Kibana's default timeframe filter (`Last 15 Minutes`). You'll want to change that to cover whatever date range your date covers. ![search landing](docs/imgs/kibana_search_01.png "Initial search page")
+1. You can select from several pre-configured options or use your own range. I often use __Last 5 Years__ ![timeframe](docs/imgs/kibana_search_02.png "Select timeframe")
+1. Your data should appear now! ![data](docs/imgs/kibana_search_03.png "Data!")
+
+## Building Maps in Kibana
+
+Kibana has a lot of visualization capability built into it. One really nice one is its mapping feature if your data already has geolocation (i.e., GPS) data available.
+
+To build a map, follow these steps:
+
+1. Go to the _Visualize_ tab, and select _Create Visualization_ ![data](docs/imgs/kibana_mapviz_01.png "Create Viz")
+1. Select the _Coordinate Map_ option ![data](docs/imgs/kibana_mapviz_02.png "Select Coordinate Map")
+1. Select your index (`twitter` in my case). ![data](docs/imgs/kibana_mapviz_03.png "Select your index")
+1. Set up the geohash fields. Set `Aggregation` to `Geohash` and `field` to `coordinates.coordinates`. Press the `run` button (the triangle) to confirm and see your viz. ![data](docs/imgs/kibana_mapviz_04.png "Configure Geohash")
+
+
+
+
+
