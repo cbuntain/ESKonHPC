@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import json
 import sys
 import requests
 
@@ -35,5 +36,5 @@ index_info = {
 es_url = sys.argv[1]
 index_name = sys.argv[2]
 
-resp = requests.put(es_url + "/" + index_name, data=index_info)
+res = requests.put(es_url + "/" + index_name, data=json.dumps(index_info), headers={"Content-Type": "application/json"})
 print("Result:", res.status_code, res.text)

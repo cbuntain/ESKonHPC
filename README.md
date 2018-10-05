@@ -14,5 +14,5 @@ Repository of scripts for spinning up a personal instance of ElasticSearch and K
 1. Push tweet data to ElasticSearch
 	- `python postTwitter.py http://localhost:<ESPORT> <index_name> <tweet_path.json`
 1. Access Kibana and set up your index pattern
-	- Create SSH tunnel to HPC, and visit http://localhost:__KPORT__ and go to _Manage_
+	- Create SSH tunnel to HPC, and visit `http://localhost:<KPORT>`, go to _Management_, and follow steps to point Kibana at the index `index_name` you created
 1. Happy searching
