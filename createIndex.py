@@ -64,7 +64,7 @@ index_info = {
                     "properties": {
                         "created_at": {
                             "type": "date",
-                            "format": "EEE MMM dd HH:mm:ss Z YYYY||strict_date_optional_time"
+                            "format": "EEE MMM dd HH:mm:ss Z yyyy"
                         },
                         "screen_name": {
                             "type": "text"
@@ -91,7 +91,7 @@ index_info = {
                 },
                 "created_at": {
                     "type": "date",
-                    "format": "EEE MMM dd HH:mm:ss Z YYYY||strict_date_optional_time"
+                    "format": "EEE MMM dd HH:mm:ss Z yyyy"
                 },
                 "smapp_datetime": {
                     "type": "alias",
